@@ -1,20 +1,30 @@
 #!/usr/bin/python3
-"""Student class defines a student"""
+"""Contains the Student class
+"""
 
 
 class Student:
-    """defines a student"""
+    """Defines a student
+    """
     def __init__(self, first_name, last_name, age):
-        """instantiation"""
+        """Instanciates student attributes
+        """
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self, attrs=None):
-        """retrieves a dictionary representation of
-        Student instance if attrs is a list of stirngs, only
-        only attribute name contained in the list must be retrieved
-        else all attributes must be retrieved"""
-        if type(attrs) == list and all(type(elem) == str for elem in attrs):
-            return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
-        return self.__dict__
+        """retrieves a dictionary
+           representation of a Student
+           instance
+        """
+        my_dict = {}
+        if attrs is None:
+            return self.__dict__
+
+        for attr in attrs:
+            try:
+                my_dict[attr] = self.__dict__[attr]
+            except KeyError:
+                pass
+        return my_dict
