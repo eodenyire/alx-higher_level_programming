@@ -108,4 +108,3 @@ class Rectangle(Base):
         dict_res = {'id': self.id, 'width': self.width, 'height': self.height,
                     'x': self.x, 'y': self.y}
         return dict_res
-

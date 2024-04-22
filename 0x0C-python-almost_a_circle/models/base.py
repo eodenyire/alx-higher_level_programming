@@ -34,7 +34,6 @@ class Base:
 
         Args:
             list_dictionaries (list): A list of dictionaries to serialize.
-        
         Returns:
             str: The JSON serialization of the input list.
         """
@@ -63,7 +62,6 @@ class Base:
 
         Args:
             json_string (str): A JSON string representing a list of dicts.
-        
         Returns:
             list: A list of dictionaries.
         """
@@ -77,7 +75,6 @@ class Base:
 
         Args:
             **dictionary (dict): Key/value pairs of attributes to initialize.
-        
         Returns:
             object: An instance of the class with the specified attributes.
         """
@@ -189,4 +186,3 @@ class Base:
             turt.hideturtle()
 
         turtle.exitonclick()
-

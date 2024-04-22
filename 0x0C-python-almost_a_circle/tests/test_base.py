@@ -20,7 +20,9 @@ class TestBase(unittest.TestCase):
         """
         b3 = Base(10)
         self.assertEqual(b3.id, 10)  # Verify custom id is assigned
-
+    def test_to_json_string(self):
+        b4 = Base()
+        self.assertEqual(b4.to_json_string([]),"[]")
 if __name__ == "__main__":
     unittest.main()
 
