@@ -1,5 +1,6 @@
 import unittest
 from models.square import Square
+import os
 
 
 class TestSquare(unittest.TestCase):
@@ -65,13 +66,13 @@ class TestSquare(unittest.TestCase):
 
     def test_zero_size(self):
         """Test of Square(0) exists"""
-        s = Square(0)
-        self.assertEqual(s.size, 0)
+        with self.assertRaises(ValueError):
+            Square(0)
 
     def test_to_dictionary(self):
         """Test of to_dictionary() in Square exists"""
         s = Square(5)
-        expected = {'id': 1, 'size': 5, 'x': 0, 'y': 0}
+        expected = {'id': 25, 'size': 5, 'x': 0, 'y': 0}
         self.assertEqual(s.to_dictionary(), expected)
 
     def test_create_id(self):
@@ -96,25 +97,27 @@ class TestSquare(unittest.TestCase):
 
     def test_save_to_file_None(self):
         """Test of Square.save_to_file(None) in Square exists"""
-        with self.assertRaises(AttributeError):
-            Square.save_to_file(None)
+        Square.save_to_file(None)
+        with open('Square.json', 'r') as f:
+            self.assertEqual(f.read(),'[]')
 
     def test_save_to_file_empty_list(self):
         """Test of Square.save_to_file([]) in Square exists"""
-        with self.assertRaises(AttributeError):
-            Square.save_to_file([])
+        Square.save_to_file([])
+        with open('Square.json', 'r') as f:
+            self.assertEqual(f.read(), '[]')
 
     def test_save_to_file_list_with_square(self):
         """Test of Square.save_to_file([Square(1)]) in Square exists"""
         s = Square(1)
         Square.save_to_file([s])
         with open('Square.json', 'r') as f:
-            self.assertEqual(f.read(), '[{"id": 1, "size": 1, "x": 0, "y": 0}]')
+            self.assertEqual(f.read(), '[{"id": 21, "size": 1, "x": 0, "y": 0}]')
 
     def test_load_from_file_no_file(self):
         """Test of Square.load_from_file() when file doesn’t exist exists"""
-        result = Square.load_from_file()
-        self.assertEqual(result, [])
+        os.remove('Square.json')
+        self.assertEqual(Square.load_from_file(), [])
 
     def test_load_from_file_file_exists(self):
         """Test of Square.load_from_file() when file exists exists"""

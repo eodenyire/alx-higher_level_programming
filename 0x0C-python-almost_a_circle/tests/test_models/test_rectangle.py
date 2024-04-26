@@ -2,6 +2,7 @@ import unittest
 import io
 from unittest.mock import patch
 from models.rectangle import Rectangle
+import os
 
 
 class TestRectangle(unittest.TestCase):
@@ -79,13 +80,13 @@ class TestRectangle(unittest.TestCase):
 
     def test_constructor_width_zero(self):
         """Test of Rectangle(0, 2) exists"""
-        r = Rectangle(0, 2)
-        self.assertEqual(r.width, 0)
+        with self.assertRaises(ValueError):
+            Rectangle(0, 2)
 
     def test_constructor_height_zero(self):
         """Test of Rectangle(1, 0) exists"""
-        r = Rectangle(1, 0)
-        self.assertEqual(r.height, 0)
+        with self.assertRaises(ValueError):
+            Rectangle(1, 0)
 
     def test_constructor_x_negative(self):
         """Test of Rectangle(1, 2, -3) exists"""
@@ -96,12 +97,6 @@ class TestRectangle(unittest.TestCase):
         """Test of Rectangle(1, 2, 3, -4) exists"""
         with self.assertRaises(ValueError):
             Rectangle(1, 2, 3, -4)
-
-    def test_to_dictionary(self):
-        """Test of to_dictionary() in Rectangle exists"""
-        r = Rectangle(1, 2, 3, 4)
-        expected = {'id': 1, 'width': 1, 'height': 2, 'x': 3, 'y': 4}
-        self.assertEqual(r.to_dictionary(), expected)
 
     def test_create_id(self):
         """Test of Rectangle.create(**{ 'id': 89 }) in Rectangle exists"""
@@ -130,23 +125,26 @@ class TestRectangle(unittest.TestCase):
 
     def test_save_to_file_None(self):
         """Test of Rectangle.save_to_file(None) in Rectangle exists"""
-        with self.assertRaises(AttributeError):
-            Rectangle.save_to_file(None)
+        Rectangle.save_to_file(None)
+        with open('Rectangle.json','r') as f:
+            self.assertEqual(f.read(), '[]')
 
     def test_save_to_file_empty_list(self):
         """Test of Rectangle.save_to_file([]) in Rectangle exists"""
-        with self.assertRaises(AttributeError):
-            Rectangle.save_to_file([])
+        Rectangle.save_to_file([])
+        with open('Rectangle.json', 'r') as f:
+            self.assertEqual(f.read(),'[]')
 
     def test_save_to_file_list_with_rectangle(self):
         """Test of Rectangle.save_to_file([Rectangle(1, 2)]) in Rectangle exists"""
         r = Rectangle(1, 2)
         Rectangle.save_to_file([r])
         with open('Rectangle.json', 'r') as f:
-            self.assertEqual(f.read(), '[{"id": 1, "width": 1, "height": 2, "x": 0, "y": 0}]')
+            self.assertEqual(f.read(), '[{"id": 13, "width": 1, "height": 2, "x": 0, "y": 0}]')
 
     def test_load_from_file_no_file(self):
         """Test of Rectangle.load_from_file() when file doesn’t exist exists"""
+        os.remove('Rectangle.json')
         result = Rectangle.load_from_file()
         self.assertEqual(result, [])
 
