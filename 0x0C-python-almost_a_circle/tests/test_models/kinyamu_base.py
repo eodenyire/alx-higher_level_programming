@@ -2,7 +2,7 @@
 """Defines the base class."""
 import json
 import csv
-# import turtle
+import turtle
 
 
 class Base:
@@ -78,13 +78,14 @@ class Base:
         Returns:
             object: An instance of the class with the specified attributes.
         """
-        if dictionary and dictionary != {}:
-            if cls.__name__ == "Rectangle":
-                new = cls(1, 1)
-            else:
-                new = cls(1)
-            new.update(**dictionary)
-            return new
+        if cls.__name__ == "Rectangle":
+            new = cls(1, 1)  # Create a new instance with default dimensions
+        elif cls.__name__ == "Square":
+            new = cls(1)  # Create a new instance with default size
+        else:
+            raise TypeError("create method can only be called on subclasses of Base")
+        new.update(**dictionary)
+        return new
 
     @classmethod
     def load_from_file(cls):
@@ -106,6 +107,7 @@ class Base:
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """Writes the CSV serialization of a list of objects to a file.
+
         Args:
             list_objs (list): A list of inherited Base instances.
         """
@@ -184,4 +186,5 @@ class Base:
                 turt.left(90)
             turt.hideturtle()
 
-            turtle.exitonclick()
+        turtle.exitonclick()
+
