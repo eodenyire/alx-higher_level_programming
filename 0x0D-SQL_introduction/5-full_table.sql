@@ -1,3 +1,2 @@
--- print full description of the table first_table
--- not allowed to use the decribe or explain statements
+-- Show full description of first_table
 SHOW CREATE TABLE first_table;
