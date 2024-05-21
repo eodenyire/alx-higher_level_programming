@@ -1,5 +1,4 @@
--- creates a table called firt_table in the current database
--- database will be passed as argument of the mysql command
+-- Create table first_table with columns id and name
 CREATE TABLE IF NOT EXISTS first_table (id INT,
 		name VARCHAR(256)
 		);
