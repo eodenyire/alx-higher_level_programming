@@ -1,3 +1,2 @@
--- displays all records of the second_table of database
--- result should display the score and the name, in descending score
+-- List records with names in second_table ordered by score descending
 SELECT score, name FROM second_table WHERE name IS NOT NULL ORDER BY score DESC;
