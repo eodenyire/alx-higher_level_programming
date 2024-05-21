@@ -1,3 +1,2 @@
--- Removes all records with a score <= 5 in table second_table
--- database name passed as an argument of the mysql command
+-- Remove records with score <= 5 from second_table
 DELETE FROM second_table WHERE score <= 5;
