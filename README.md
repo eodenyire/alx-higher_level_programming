@@ -1,4 +1,4 @@
-# ALX Higher Level Program
+# ALX Higher Level Programming
 
 ## About
 
