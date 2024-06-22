@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
 Prints all City objects from the database hbtn_0e_14_usa.
-Takes 3 arguments: mysql username, mysql password, and database name.
+Takes 3 arguments: mysql username, mysql password,
+and database name.
 """
 import sys
 from sqlalchemy import (create_engine)

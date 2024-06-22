@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Changes the name of the State object with id = 2 to "New Mexico" in the database hbtn_0e_6_usa.
+Changes the name of the State object with id = 2 to
+"New Mexico" in the database hbtn_0e_6_usa.
 Takes 3 arguments: mysql username, mysql password, and database name.
 """
 import sys

@@ -3,11 +3,12 @@
 Defines the City class, mapped to the 'cities' table in the database.
 
 Attributes:
-    id (int): Unique identifier for each city, auto-incremented.
-    name (str): Name of the city, maximum length of 128 characters.
-    state_id (int): Foreign key referencing the 'id' column of the 'states' table.
+    id (int): Unique identifier for each city.
+    name (str): Name of the city, max 128 characters.
+    state_id (int): Foreign key referencing the 'id'.
 
-This class inherits from SQLAlchemy's Base class, which is a declarative base
+This class inherits from SQLAlchemy's Base class,
+which is a declarative base
 that allows SQLAlchemy to map classes to tables in the database.
 """
 from sqlalchemy import Column, Integer, String, ForeignKey

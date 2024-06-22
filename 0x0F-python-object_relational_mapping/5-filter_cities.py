@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """
-Takes in the name of a state as an argument and lists all cities of that state.
-The script takes 4 arguments: MySQL username, MySQL password, database name, and state name.
+Takes in the name of a state as an argument and lists
+all cities of that state.
 This script is SQL injection safe.
-Example usage: ./5-filter_cities.py root root hbtn_0e_4_usa 'California'
+Example usage: ./5-filter_cities.py root root
+hbtn_0e_4_usa 'California'
 """
 if __name__ == "__main__":
     import MySQLdb

@@ -11,7 +11,7 @@ Classes:
 Attributes:
     __tablename__ (str): The name of the database table ('states').
     id (Column): Primary key column for state ID.
-    name (Column): Column for state name, with a maximum length of 128 characters.
+    name (Column): Column for state name, with a max 128 characters.
 
 Instance:
     Base (Base): SQLAlchemy declarative base for class mapping.

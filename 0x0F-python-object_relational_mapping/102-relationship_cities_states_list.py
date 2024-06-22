@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Script that lists all City objects from the database hbtn_0e_101_usa
+Script that lists all City objects from the database
+hbtn_0e_101_usa
 """
 import sys
 from sqlalchemy import create_engine
@@ -11,7 +12,8 @@ from relationship_city import City
 if __name__ == "__main__":
     # Check if exactly 3 arguments are provided
     if len(sys.argv) != 4:
-        print("Usage: ./102-relationship_cities_states_list.py <username> <password> <database_name>")
+        print("Usage: ./102-relationship_cities_states_list.py "
+              "<username> <password> <database_name>")
         sys.exit(1)
 
     # Capture command line arguments
@@ -20,7 +22,8 @@ if __name__ == "__main__":
     database = sys.argv[3]
 
     # Connect to MySQL database using SQLAlchemy
-    engine = create_engine(f'mysql+mysqldb://{username}:{password}@localhost:3306/{database}')
+    engine = create_engine(
+        f'mysql+mysqldb://{username}:{password}@localhost:3306/{database}')
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()

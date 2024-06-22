@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Contains the class definition of State and an instance Base = declarative_base().
+Contains the class definition of State and an instance BasE.
 
 This module defines the State class, representing states in a database and
 inherits from the SQLAlchemy declarative Base. It also establishes a
@@ -12,12 +12,8 @@ Classes:
 Attributes:
     __tablename__ (str): The name of the database table ('states').
     id (Column): Primary key column for state ID.
-    name (Column): Column for state name, with a maximum length of 128 characters.
-    cities (relationship): One-to-many relationship with City objects, representing cities in the state.
-
-Dependencies:
-    Base (Base): SQLAlchemy declarative base for class mapping, imported from sqlalchemy.ext.declarative.
-    relationship (relationship): SQLAlchemy relationship function, imported from sqlalchemy.orm.
+    name (Column): Column for state name, with a max of 128 characters.
+    cities (relationship): One-to-many relationship with City objects
 """
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base

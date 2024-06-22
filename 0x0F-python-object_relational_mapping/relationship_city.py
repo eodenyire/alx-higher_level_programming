@@ -11,11 +11,11 @@ Classes:
 Attributes:
     __tablename__ (str): The name of the database table ('cities').
     id (Column): Primary key column for city ID.
-    name (Column): Column for city name, with a maximum length of 128 characters.
+    name (Column): Column for city name, with a max of 128 characters.
     state_id (Column): Foreign key column linking to the 'states' table.
 
 Dependencies:
-    Base (Base): SQLAlchemy declarative base for class mapping, imported from relationship_state.
+    Base (Base): SQLAlchemy declarative base for class mapping
 """
 from relationship_state import Base
 from sqlalchemy import Column, Integer, String, ForeignKey
