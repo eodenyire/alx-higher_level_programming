@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""lists all State objects from the database hbtn_0e_6_usa
+"""
+Lists all State objects from the database hbtn_0e_6_usa.
+The script takes 3 arguments: MySQL username, MySQL password, and database name.
+Example usage: ./7-model_state_fetch_all.py root root hbtn_0e_6_usa
 """
 import sys
 from model_state import Base, State

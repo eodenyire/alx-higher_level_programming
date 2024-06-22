@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""changes the name of a State from database
+"""
+Changes the name of the State object with id = 2 to "New Mexico" in the database hbtn_0e_6_usa.
+Takes 3 arguments: mysql username, mysql password, and database name.
 """
 import sys
 from sqlalchemy import (create_engine)

@@ -1,7 +1,9 @@
 #!/usr/bin/python3
-"""lists all State objects that contain
-the letter a from the database hbtn_0e_6_usa
-the script takes 3 arguments"""
+"""
+Lists all State objects that contain the letter 'a' from the database hbtn_0e_6_usa.
+The script takes 3 arguments: MySQL username, MySQL password, and database name.
+Example usage: ./9-model_state_filter_a.py root root hbtn_0e_6_usa
+"""
 import sys
 from model_state import Base, State
 

@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-""" prints the first State object from
-the database hbtn_0e_6_usa, script takes 3 arguments
+"""
+Prints the first State object from the database hbtn_0e_6_usa.
+The script takes 3 arguments: MySQL username, MySQL password, and database name.
+Example usage: ./8-model_state_fetch_first.py root root hbtn_0e_6_usa
 """
 import sys
 from model_state import Base, State
