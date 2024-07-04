@@ -20,7 +20,7 @@ In this project, you will learn how to send HTTP requests, handle HTTP responses
 └── README.md
 ```
 
-Files and Tasks
+## Files and Tasks
 0-body_size.sh
 Description: A Bash script that takes in a URL, sends a request to that URL, and displays the size of the body of the response.
 Usage: ./0-body_size.sh <URL>
@@ -65,17 +65,18 @@ Example:
 
 ./5-post_params.sh http://example.com
 
-Learning Objectives
+## Learning Objectives
 How to send HTTP/HTTPS requests in Bash
 How to handle HTTP responses
 How to use various HTTP methods (GET, POST, DELETE, etc.)
 How to handle and manipulate HTTP headers
 How to work with query strings and request bodies
 
-Author
+## Author
 Emmanuel Odenyire Anyira
 
 Email: eodenyire@gmail.com
 LinkedIn: Emmanuel Odenyire Anyira
-License
+
+## License
 This project is licensed under the MIT License - see the LICENSE file for details.
