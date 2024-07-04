@@ -18,6 +18,8 @@ In this project, you will learn how to send HTTP requests, handle HTTP responses
 ├── 4-header.sh
 ├── 5-post_params.sh
 └── README.md
+'''
+
 Files and Tasks
 0-body_size.sh
 Description: A Bash script that takes in a URL, sends a request to that URL, and displays the size of the body of the response.
