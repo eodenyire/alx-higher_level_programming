@@ -1,5 +1,6 @@
 # 0x10. Python - Network #0
 
+
 This repository contains solutions to the project tasks for `0x10. Python - Network #0`, part of the ALX Software Engineering Program. The focus of this project is to learn about network programming in Python, including making HTTP requests and interacting with web servers.
 
 ## Project Overview
