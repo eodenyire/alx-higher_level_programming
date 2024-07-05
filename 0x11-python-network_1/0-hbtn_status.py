@@ -10,13 +10,6 @@ def fetch_status(url):
     """
     Fetches data from a given URL and prints information about the response.
 
-    Args:
-    - url (str): The URL to fetch data from.
-
-    Prints:
-    - type of the content fetched.
-    - raw content fetched.
-    - UTF-8 decoded content fetched.
     """
     try:
         with urllib.request.urlopen(url) as response:
