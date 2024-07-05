@@ -30,6 +30,7 @@ def fetch_status(url):
     except urllib.error.HTTPError as e:
         print(f"Error code: {e.code}")
 
+
 if __name__ == "__main__":
     url = 'https://alx-intranet.hbtn.io/status'
     fetch_status(url)
