@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Takes in a URL, sends a request to the URL, and displays the body of the response.
+Takes in a URL, sends a request to the URL, and displays the response body.
 Handles HTTP errors if the status code is greater than 400.
 """
 if __name__ == "__main__":
