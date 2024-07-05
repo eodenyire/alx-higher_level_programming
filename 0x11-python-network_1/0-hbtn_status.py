@@ -6,6 +6,7 @@ Displays the type, content, and UTF-8 encoded content of the response.
 import urllib.request
 import urllib.error
 
+
 def fetch_status(url):
     """
     Fetches data from a given URL and prints information about the response.
