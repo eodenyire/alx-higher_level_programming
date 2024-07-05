@@ -1,20 +1,7 @@
 #!/usr/bin/python3
-"""
-Lists the 10 most recent commits of a repository using the GitHub API.
-
-Usage:
-    ./script_name.py <repository_name> <owner_name>
-
-Example:
-    ./script_name.py rails rails
-
-This script fetches the 10 most recent commits from the specified repository
-owned by the specified user using the GitHub API. It prints each commit in the format:
-<sha>: <author name>
-
-Arguments:
-    repository_name: The name of the repository (e.g., 'rails')
-    owner_name: The owner of the repository (e.g., 'rails')
+"""List 10 commits (from the most recent to oldest) of the
+repository "rails" by user "rails" you must use the githubapi
+Print all commits by: <sha>: <author name>` (one by line)
 """
 if __name__ == "__main__":
     import sys
