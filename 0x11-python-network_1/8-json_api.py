@@ -1,7 +1,9 @@
 #!/usr/bin/python3
-"""takes in a letter and sends a POST request
-to http://0.0.0.0:5000/search_user with the letter
-as a parameter
+"""
+Takes in a letter and sends a POST request to http://0.0.0.0:5000/search_user
+with the letter as a parameter. Parses the JSON response and prints the user's
+ID and name if available, or prints a message if no user is found or if the
+response is not valid JSON.
 """
 if __name__ == "__main__":
     import sys
