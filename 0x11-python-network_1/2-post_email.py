@@ -1,7 +1,16 @@
 #!/usr/bin/python3
-"""takes in a URL and an email, sends a POST request
-to the passed URL with the email as a parameter
-and displays the body of the response
+"""
+Takes in a URL and an email, sends a POST request to the passed URL with the 
+email as a parameter, and displays the body of the response (decoded in utf-8).
+
+Usage:
+    ./script_name.py <URL> <email>
+
+Example:
+    ./script_name.py http://example.com hr@example.com
+
+This script sends a POST request to the specified URL with the provided email 
+as a parameter and prints the response body.
 """
 if __name__ == "__main__":
     import sys
